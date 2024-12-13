@@ -2,6 +2,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.commands.example.ExampleSetSpeedCommand;
+import frc.robot.subsystems.ExampleSubsystem;
 
 public class Controls {
     public static final boolean EXAMPLE_ENABLED = false;
@@ -22,6 +23,7 @@ public class Controls {
     }
 
     private void bindExampleControls() {
-        driverController.a().onTrue(new ExampleSetSpeedCommand(s.exampleSubsystem, 0.1));
+        driverController.a().onTrue(s.exampleSubsystem.setSpeedCmd(driverController.getLeftY()));
+        
     }
 }
