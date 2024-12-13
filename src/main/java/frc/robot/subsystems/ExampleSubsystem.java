@@ -3,6 +3,9 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.dummy.Motor;
+
+import java.util.function.DoubleSupplier;
+
 import com.ctre.phoenix6.hardware.TalonFX;
 import frc.robot.Hardware;
 
@@ -37,7 +40,7 @@ public class ExampleSubsystem extends SubsystemBase {
     }
 
     // Factories
-    public Command setSpeedCmd(double speed) {
-        return runOnce(() -> setSpeed(speed));
+    public Command setSpeedCmd(DoubleSupplier speed) {
+        return runOnce(() -> setSpeed(speed.getAsDouble()));
     }
 }

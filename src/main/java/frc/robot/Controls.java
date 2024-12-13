@@ -1,5 +1,7 @@
 package frc.robot;
 
+import java.util.function.DoubleSupplier;
+
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.commands.example.ExampleSetSpeedCommand;
 import frc.robot.subsystems.ExampleSubsystem;
@@ -23,7 +25,8 @@ public class Controls {
     }
 
     private void bindExampleControls() {
-        driverController.a().onTrue(s.exampleSubsystem.setSpeedCmd(driverController.getLeftY()));
+        DoubleSupplier getleftY =() -> driverController.getLeftY();
+        driverController.a().onTrue(s.exampleSubsystem.setSpeedCmd(getleftY));
         
     }
 }
