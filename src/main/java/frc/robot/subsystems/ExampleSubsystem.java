@@ -41,6 +41,9 @@ public class ExampleSubsystem extends SubsystemBase {
 
     // Factories
     public Command setSpeedCmd(DoubleSupplier speed) {
-        return runOnce(() -> setSpeed(speed.getAsDouble()));
+        return runOnce(() -> {
+            setSpeed(speed.getAsDouble());
+            System.out.println("成功了"+speed.getAsDouble());
+        });
     }
 }
