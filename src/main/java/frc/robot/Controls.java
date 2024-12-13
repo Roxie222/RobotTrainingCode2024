@@ -7,7 +7,7 @@ import frc.robot.commands.example.ExampleSetSpeedCommand;
 import frc.robot.subsystems.ExampleSubsystem;
 
 public class Controls {
-    public static final boolean EXAMPLE_ENABLED = false;
+    public static final boolean EXAMPLE_ENABLED = true;
     public static final int DRIVE_CONTROLLER_PORT = 0;
 
     private final CommandXboxController driverController;
